@@ -1,0 +1,42 @@
+{% extends 'base.html' %} 
+{%load static%}
+{% block main-content %}
+<main class="container py-5">
+    <section class="card card-body">
+        <font color="Black" 	face="Arial Black">
+            <h1 class="display-1 text-center">SRESEC</h1>
+        </font>
+        
+        <a class="navbar-brand text-center" href="/">
+            <img src="{% static "app/images/caracter.png" %}" align=center width="250" height="250"/>
+          </a>
+        <h2 >Nuestra Misión:</h2>
+        <p> 
+            “Contribuir al desarrollo económico del país mediante la recaudación 
+            aduanera, lograda a partir de una gestión transparente, ágil y oportuna, 
+            a través de la facilitación, control y fiscalización de las operaciones 
+            de comercio exterior, reprimiendo los ilícitos aduaneros en beneficio de 
+            la producción e industria nacional”.
+        </p>
+        <h2>Nuestra Visión:</h2>    
+        
+        <p>“Ser una aduana desburocratizada, tecnificada, con infraestructura óptima, 
+            recursos humanos calificados y que cumpla con estándares de calidad para 
+            responder a la dinámica del  comercio internacional en beneficio del pueblo 
+            boliviano”. </p>
+            
+            
+    
+        <div class="text-center">
+            <a class="btn btn-primary" href="/signin/">
+                Iniciar Sesion
+            </a>
+            <a class="btn btn-primary" href="/signup/">
+                Registrarse
+            </a>
+            
+        </div>
+    </section>
+
+</main>
+{% endblock main-content %}

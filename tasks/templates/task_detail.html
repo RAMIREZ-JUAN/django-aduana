@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <br>
+      <h1 class="text-center text-secondary">{{task.nombre}}</h1>
+
+
+      {{error}}
+      <br>
+      <div class="row">
+        <div class="text-center">
+          <div class="card col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="card-body">
+              <form method="POST" class="text-center">
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <button class="btn btn-success">
+                  Actualizar
+                </button>
+              </form>
+              <br>
+              <form action="{% url 'complete_task' task.id %}" method="POST" class="text-center">
+                {% csrf_token %}
+                <button class="btn btn-primary">
+                  Completado
+                </button>
+              </form>
+              <br>
+              <form action="{% url 'delete_task' task.id %}" method="POST" class="text-center">
+                {% csrf_token %}
+                <button class="btn btn-danger">
+                  Eliminar
+                </button>
+              
+                
+            </div>
+            <button class="btn">
+              <a href="{% url 'generar_pdf' %}" target="_blank">Generar y Ver PDF</a>
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

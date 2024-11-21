@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<h1 class="text-center">EQUIPOS</h1>
+
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+  </div>
+  <div class="">
+    <div class="table-responsive">
+      <table class="table table-striped text-center">
+        <thead>
+          <tr>
+            <th>Nro</th>
+            <th>Nombre</th>
+            <th>Unidad</th>
+            <th>Fecha</th>
+            <th colpsan="2">Opciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for task in tasks %}
+          <tr>
+              
+              <td>{{task.id}}</td>
+              <td>{{task.nombre}}</td>
+              <td>{{task.unidad}}</td>
+              <td>{{task.datecompleted|date:'Y-m-d -- H:i:s'}}</td>
+              <td><a href="{% url 'task_detail' task.id %}" class="btn btn-info">ver</a></td>
+                  <p>{{task.description}}</p>
+                
+              </a>
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block main-content %}
+  
+    <div class="container">
+    <br><br>
+        <font color="Black" face="Comic Sans MS,arial">
+        <h1 class="text-center ">REGISTRAR EQUIPO</h1>
+        </font>
+        <br></br>
+        <div class="row container">
+          <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+            data-wow-delay="0.6s0" style="animation-duration: 1s; animation-delay: 0.6s;
+            animation-name: none;">
+            <div class="goodnessseccont buttermilk smbg">
+              <a href="{% url 'create_task' %}">
+                <div class="goodnessseccont text-center">
+                  <img src="{% static 'app/images/impresora.png'%}"
+                          class="img-responsive center-block" alt="" width="350" height="300">
+                    <p class="mlkpro">IMPRESORA</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+            data-wow-delay="0.6s0" style="animation-duration: 1s; animation-delay: 0.6s;
+            animation-name: none;">
+            <div class="goodnessseccont buttermilk smbg">
+              <a href="{% url 'create_scan' %}">
+                <div class="goodnessseccont text-center">
+                  <img src="{% static 'app/images/scaners.png'%}"
+                          class="img-responsive center-block" alt="" width="400" height="300">
+                    <p class="mlkpro">ESCANER</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+            data-wow-delay="0.6s0" style="animation-duration: 1s; animation-delay: 0.6s;
+            animation-name: none;">
+            <div class="goodnessseccont buttermilk smbg">
+              <a href="{% url 'create_cpu' %}">
+                <div class="goodnessseccont text-center">
+                  <img src="{% static 'app/images/pcs.png'%}"
+                          class="img-responsive center-block" alt="" width="350" height="300">
+                    <p class="mlkpro">CPU</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+            data-wow-delay="0.6s0" style="animation-duration: 1s; animation-delay: 0.6s;
+            animation-name: none;">
+            <div class="goodnessseccont buttermilk smbg">
+              <a href="{% url 'create_monitor' %}">
+                <div class="goodnessseccont text-center">
+                  <img src="{% static 'app/images/monitor.png'%}"
+                          class="img-responsive center-block" alt="" width="350" height="300">
+                    <p class="mlkpro">MONITOR</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+            data-wow-delay="0.6s0" style="animation-duration: 1s; animation-delay: 0.6s;
+            animation-name: none;">
+            <div class="goodnessseccont buttermilk smbg">
+              <a href="{% url 'create_lap' %}">
+                <div class="goodnessseccont text-center">
+                  <img src="{% static 'app/images/laps.png'%}"
+                          class="img-responsive center-block" alt="" width="350" height="300">
+                    <p class="mlkpro">PORTATIL</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s"
+            data-wow-delay="0.6s0" style="animation-duration: 1s; animation-delay: 0.6s;
+            animation-name: none;">
+            <div class="goodnessseccont buttermilk smbg">
+              <a href="{% url 'create_disco' %}">
+                <div class="goodnessseccont text-center">
+                  <img src="{% static 'app/images/discos.png'%}"
+                          class="img-responsive center-block" alt="" width="350" height="300">
+                    <p class="mlkpro">DISCO</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          </div>
+    <br></br>
+
+
+{% endblock main-content %}
+
