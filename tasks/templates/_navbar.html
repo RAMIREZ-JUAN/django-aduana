@@ -1,0 +1,59 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-sm">
+  <div class="container">
+    
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="{% static '/images/laduana.png' %}" alt="Logo" width="250" height="60" class="me-2" />
+      <span class="fs-4 text-light"></span>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a href="/" class="nav-link text-dark">Inicio</a>
+        </li>
+
+        {% if user.is_authenticated %}
+        
+        <li class="nav-item">
+          <a href="{% url 'create_task' %}" class="nav-link text-dark">Registrar</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="{% url 'tasks_completed' %}" class="nav-link text-dark">Equipos terminados</a>
+        </li>
+        
+        <li class="nav-item">
+          <a href="{% url 'tasks' %}" class="nav-link text-dark">Pendientes</a>
+        </li>
+
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-primary" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hola, {{ user.username }}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+          </ul>
+        </li>
+        {% else %}
+       
+        <li class="nav-item">
+          <a href="/signin" class="nav-link text-dark">Acceder</a>
+        </li>
+        <li class="nav-item">
+          <a href="/signup" class="nav-link text-dark">Registrarse</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
