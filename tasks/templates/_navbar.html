@@ -1,41 +1,56 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-white shadow-sm">
+
+<nav class="navbar navbar-expand-lg navbar-white" style="background-color: #003366; /* Azul Marino */" class="shadow-sm d-flex justify-content-between">
+  <!-- Logo alineado a la izquierda -->
+  <a class="navbar-brand d-flex align-items-center" href="/">
+    <img src="{% static 'images/sresec.png' %}" alt="Logo" width="190" class="img-fluid me-2" />
+  </a>
+  
+  <!-- Texto centrado -->
+  <div class="d-flex flex-column justify-content-center align-items-center flex-grow-1">
+    <strong class="text-white" style="font-size: 23px;">SISTEMA DE REGISTRO DE ENTRADA Y SALIDA DE EQUIPOS DE COMPUTACION</strong>
+    <strong class="text-white" style="font-size: 15px;">ADUANA NACIONAL</strong>
+  </div>
+ 
+  <!-- Imagen 'finaduana' alineada a la derecha -->
+  <div class="ms-auto">
+    <img src="{% static 'images/finaduana.png' %}" alt="Imagen" width="250" height="60" />
+  </div>
+</nav>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-white bg-dark shadow-sm">
   <div class="container">
-    
-    <a class="navbar-brand d-flex align-items-center" href="/">
-      <img src="{% static '/images/laduana.png' %}" alt="Logo" width="250" height="60" class="me-2" />
-      <span class="fs-4 text-light"></span>
-    </a>
+    <!-- Botón de navegación móvil -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+  <span class="navbar-toggler-icon" style="background-color: white;"></span>
+</button>
 
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    
+    <!-- Menú -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a href="/" class="nav-link text-dark">Inicio</a>
+          <a href="/" class="nav-link text-white fw-bold">Inicio</a>
         </li>
 
         {% if user.is_authenticated %}
         
         <li class="nav-item">
-          <a href="{% url 'create_task' %}" class="nav-link text-dark">Registrar</a>
+          <a href="{% url 'create_task' %}" class="nav-link text-white fw-bold">Registrar</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'tasks_completed' %}" class="nav-link text-white fw-bold">Equipos terminados</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'tasks' %}" class="nav-link text-white fw-bold">Pendientes</a>
         </li>
 
-        <li class="nav-item">
-          <a href="{% url 'tasks_completed' %}" class="nav-link text-dark">Equipos terminados</a>
-        </li>
-        
-        <li class="nav-item">
-          <a href="{% url 'tasks' %}" class="nav-link text-dark">Pendientes</a>
-        </li>
-
-        
+        <!-- Menú desplegable del usuario -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-primary" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-primary fw-bold" href="#" id="userDropdown" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
             Hola, {{ user.username }}
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
@@ -45,12 +60,12 @@
           </ul>
         </li>
         {% else %}
-       
+        
         <li class="nav-item">
-          <a href="/signin" class="nav-link text-dark">Acceder</a>
+          <a href="/signin" class="nav-link text-white fw-bold">Acceder</a>
         </li>
         <li class="nav-item">
-          <a href="/signup" class="nav-link text-dark">Registrarse</a>
+          <a href="/signup" class="nav-link text-white fw-bold">Registrarse</a>
         </li>
         {% endif %}
       </ul>
